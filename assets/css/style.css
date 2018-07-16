@@ -1,0 +1,36 @@
+body {
+    background-image: url("../../assets/images/background.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.header {
+    position: fixed;
+    top: 0;
+    text-align:center;
+    right:10%;
+    left:10%;
+    color: white;
+    margin: 20px;
+    font-size: 30%;
+    }
+
+.card{
+    border-color: black;
+    border-style: ridge;
+    background-color: inherit;
+    margin-top: 175px;
+    font-weight: bold;
+    color: white;
+    opacity: none;
+    
+
+}
+.card-title{
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    opacity: none;
+}

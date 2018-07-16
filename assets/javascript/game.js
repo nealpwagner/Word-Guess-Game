@@ -2,10 +2,10 @@ var gameHasStarted = false;
 var targetWord = "alphabet";
 var currentGuess = "";
 var badLetters = "";
-var maxGuesses = 3;
+var maxGuesses = 6;
 var hangmanWords = ["nollie", "Kickflip", "heelflip", "ollie", "treflip"];
 var wordIndex = 0;
-
+var winCount = 0;
 
 $(document).keyup(function(event) {
     if(!gameHasStarted){
@@ -16,12 +16,9 @@ $(document).keyup(function(event) {
 
 function startGame(){
     //set target word based on index
-    targetWord = hangmanWords[wordIndex];
-    //increment index
-    wordIndex++;
-    if(wordIndex >= hangmanWords.length){
-        wordIndex = 0;
-    }
+
+    targetWord = hangmanWords[Math.floor(Math.random() * hangmanWords.length)];
+
     badLetters = "";
     currentGuess = "";
     for(var i=0; i < targetWord.length; i++){
@@ -80,6 +77,8 @@ function processBadLetter(key){
 function processWinner(){
     alert("winner");
     processEnd();
+    winCount ++;
+    $("#winCount").text(winCount);
 }
 function processLoser(){
     alert("loser");
