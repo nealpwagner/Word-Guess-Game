@@ -23,7 +23,7 @@ function startGame() {
         currentGuess += "_";
     }
     $("#currentGuess").text(currentGuess);
-    $("#badLetters").text("");
+    $("#badLetters").text("Letters guessed: " + badLetters);
     $("#guessesLeft").text("Guesses left: " + maxGuesses);
     $("#guessInput").keyup(function (event) {
         if (event.keyCode >= 65 && event.keyCode <= 90) {
@@ -62,7 +62,7 @@ function processGoodLetter(key) {
 
 function processBadLetter(key) {
     badLetters += key;
-    $("#badLetters").text(badLetters);
+    $("#badLetters").text("Letters guessed: " + badLetters);
     if (badLetters.length >= maxGuesses) {
         processLoser();
     } else {
